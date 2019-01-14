@@ -1,0 +1,19 @@
+Tema: Gameboy
+
+- Jogo de plataforma onde o jogador precisa limpar o cenário
+- Quando o inimigo aparece, ele vai se multiplicando. O jogador precisa destruir o original pra ele parar
+de se multiplicar.
+- Ou o inimigo pode ser uma criatura que anda lentamente até o objeto que o jogador precisa defender.
+Se ele agarrar o objeto, ele pode sair andando com ele até o outro lado da tela. Se ele chegar, o jogador
+perde o objeto. Senão, o objeto volta para o ponto de partida
+- Há coisas no cenário que o jogador precisa defender do inimigo. Se o inimigo atingir, o jogador perde
+aquela linha
+- Enquanto o jogador está recarregando a pilha, ele não pode atacar.
+- O jogador joga em um console de gameboy
+- Tem o indicador da luz começando a piscar quando a bateria está pra acabar
+- O jogador precisa encontrar um momento do jogo pra parar e trocar a bateria
+- O jogador precisa escolher entre algo e a bateria para continuar a jogar.
+- Jogo em uma sala apenas
+- Jogador precisa fazer coisas na tela, mas se a bateria do console começar a acabar, ele precisa parar
+e se recarregar em um ponto da tela
+
