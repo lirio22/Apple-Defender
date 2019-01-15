@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeetleEnemy : MonoBehaviour {
+public class CartepillarEnemy : MonoBehaviour {
     
     //----Movement Variables----//
     private float speed = 2.0f;
@@ -16,9 +16,9 @@ public class BeetleEnemy : MonoBehaviour {
 
     private void Start()
     {
-        speed = DifficultyManager.instance.beetleSpeed;
-        escapingSpeed = DifficultyManager.instance.beetleEscapingSpeed;
-        health = DifficultyManager.instance.beetleHealth;
+        speed = DifficultyManager.instance.cartepillarSpeed;
+        escapingSpeed = DifficultyManager.instance.cartepillarEscapingSpeed;
+        health = DifficultyManager.instance.cartepillarHealth;
     }
 
     private void Update()

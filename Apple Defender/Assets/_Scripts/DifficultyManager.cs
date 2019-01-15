@@ -5,9 +5,9 @@ using UnityEngine;
 public class DifficultyManager : MonoBehaviour {
 
     //----Beetle Enemy Variables----//
-    public float beetleSpeed;
-    public float beetleEscapingSpeed;
-    public int beetleHealth;
+    public float cartepillarSpeed;
+    public float cartepillarEscapingSpeed;
+    public int cartepillarHealth;
 
     //----Difficulty Variables----//
     public int wave;
