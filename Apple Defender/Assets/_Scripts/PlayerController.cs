@@ -10,16 +10,13 @@ public class PlayerController : MonoBehaviour
     private bool facingRight = true;
     private Rigidbody2D rb;
 
-    //----Jump Variables----//
-    private float impulseForce = 3.5f;
-    private bool isGrounded = true;
-
     //----Stairs Variables----//
     private bool isClimbing;
 
     //----Fire Variables----//
     public GameObject bulletPrefab;
     public Transform bulletSpawnPosition;
+    public AmmoManager ammoManager;
 
     private void Start()
     {
@@ -29,7 +26,6 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Movement();
-        Jump();
         Fire();
         Climb();
     }
@@ -57,17 +53,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void Jump()
-    {
-        if(Input.GetKeyDown(KeyCode.Space) && isGrounded && !isClimbing)
-        {            
-            rb.AddForce(Vector2.up * impulseForce, ForceMode2D.Impulse);            
-        }
-    }
-
     private void Fire()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(Input.GetKeyDown(KeyCode.Mouse0) && ammoManager.CurrentAmmo > 0)
         {
             if (!facingRight)
             {
@@ -77,6 +65,7 @@ public class PlayerController : MonoBehaviour
             {
                 Instantiate(bulletPrefab, bulletSpawnPosition.position, Quaternion.identity);
             }
+            ammoManager.CurrentAmmo--;
         }
     }
 
@@ -96,19 +85,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Ground")
+        if(other.CompareTag("AmmoCrate"))
         {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if(other.gameObject.tag == "Ground")
-        {
-            isGrounded = false;
+            ammoManager.ResetCurrentAmmo();
         }
     }
 

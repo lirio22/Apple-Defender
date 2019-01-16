@@ -8,6 +8,9 @@ TagManager:
   - End
   - Ground
   - Stairs
+  - AmmoCrate
+  - GameOver
+  - Bullet
   layers:
   - Default
   - TransparentFX
