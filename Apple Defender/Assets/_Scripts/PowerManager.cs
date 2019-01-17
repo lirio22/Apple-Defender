@@ -9,8 +9,8 @@ public class PowerManager : MonoBehaviour {
 
     private float maxPowerDuration = 20f;
     private float currentPowerDuration = 20f;
-    private float maxScale = 1.6f;
-    private float currentScale = 1.6f;
+    private float maxScale = 2f;
+    private float currentScale = 2f;
 
     private bool isCharging;
 
@@ -31,7 +31,7 @@ public class PowerManager : MonoBehaviour {
         currentPowerDuration -= Time.deltaTime;
         if (currentPowerDuration <= 0)
         {
-            //Chama o Game Over
+            SceneController.instance.BatteryGameOver();           
         }
         UpdateBatteryLight();
     }

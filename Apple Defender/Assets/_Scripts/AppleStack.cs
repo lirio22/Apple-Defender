@@ -10,15 +10,13 @@ public class AppleStack : MonoBehaviour
 
     public void RemoveApple()
     {
-        Debug.Log("Is removing");
         apple[appleQtd].SetActive(false);
         appleQtd--;
     }
 
     public void AddApple()
     {
-        Debug.Log("Is adding");
         appleQtd++;
-        apple[appleQtd].SetActive(true);        
+        apple[appleQtd].SetActive(true);
     }
 }

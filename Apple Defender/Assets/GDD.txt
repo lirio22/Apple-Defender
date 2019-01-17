@@ -14,3 +14,16 @@ aquela linha OK
 - Jogador precisa fazer coisas na tela, mas se a bateria do console começar a acabar, ele precisa parar
 e se recarregar em um ponto da tela
 
+ARTE
+- Title Screen
+
+SONS
+- Música
+- Atirando
+- Pegando munição
+- Recarregando bateria
+- Insetos(opcional)
+- pegando maçã
+- inseto morrendo
+- Inseto fugindo
+- GameOver

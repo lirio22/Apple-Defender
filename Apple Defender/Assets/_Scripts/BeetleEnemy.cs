@@ -28,6 +28,7 @@ public class BeetleEnemy : MonoBehaviour {
         health--;
         if (health <= 0)
         {
+            ScoreManager.instance.Score += 30;
             Destroy(gameObject);
         }
     }
@@ -55,13 +56,13 @@ public class BeetleEnemy : MonoBehaviour {
 
         if (other.CompareTag("Bullet"))
         {
-            RemoveHealth();
+            RemoveHealth();            
             Destroy(other.gameObject);
         }
 
         if (other.CompareTag("GameOver"))
         {
-            //Chamar o GameOver
+            SceneController.instance.InsectGameOver();
         }
     }
 

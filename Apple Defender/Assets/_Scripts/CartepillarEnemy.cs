@@ -28,6 +28,7 @@ public class CartepillarEnemy : MonoBehaviour {
         health--;
         if(health <= 0)
         {
+            ScoreManager.instance.Score += 15;
             Destroy(gameObject);
         }
     }
@@ -61,7 +62,7 @@ public class CartepillarEnemy : MonoBehaviour {
 
         if(other.CompareTag("GameOver"))
         {
-            //Chamar o GameOver
+            SceneController.instance.InsectGameOver();
         }
     }
 
