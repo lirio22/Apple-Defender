@@ -31,6 +31,8 @@ public class SceneController : MonoBehaviour
             titleScreen.SetActive(false);
             Time.timeScale = 1;
             gameScreen.SetActive(true);
+            SoundManager.instance.PlayBMG();
+            SoundManager.instance.PlayGameStartSFX();
         }
 
         if(canRestart)
@@ -44,6 +46,7 @@ public class SceneController : MonoBehaviour
 
     public void InsectGameOver()
     {
+        SoundManager.instance.PlayGameOverSFX();
         Time.timeScale = 0;
         StartCoroutine(CallInsect());
     }

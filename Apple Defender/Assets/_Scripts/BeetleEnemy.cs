@@ -56,6 +56,7 @@ public class BeetleEnemy : MonoBehaviour {
 
         if (other.CompareTag("Bullet"))
         {
+            SoundManager.instance.PlayHitEnemySFX();
             RemoveHealth();            
             Destroy(other.gameObject);
         }

@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
                 Instantiate(bulletPrefab, bulletSpawnPosition.position, Quaternion.identity);
             }
             ammoManager.CurrentAmmo--;
+            SoundManager.instance.PlayShotSFX();
         }
     }
 
@@ -89,6 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.CompareTag("AmmoCrate"))
         {
+            SoundManager.instance.PlayGetAmmoSFX();
             ammoManager.ResetCurrentAmmo();
         }
     }
