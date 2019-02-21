@@ -6,13 +6,13 @@ public class SoundManager : MonoBehaviour {
 
     public AudioSource BGM;
     public AudioSource SFX;
+    public AudioSource SFXLoop;
 
     public AudioClip gameStartSFX;
     public AudioClip shotSFX;
     public AudioClip hitEnemySFX;
     public AudioClip stealAppleSFX;
     public AudioClip getAmmoSFX;
-    public AudioClip lowBatterySFX;
     public AudioClip gameOverSFX;
 
     public static SoundManager instance;
@@ -54,7 +54,7 @@ public class SoundManager : MonoBehaviour {
 
     public void PlayLowBatterySFX()
     {
-        SFX.PlayOneShot(lowBatterySFX);
+        SFXLoop.Play();
     }
 
     public void PlayGameOverSFX()
@@ -72,5 +72,10 @@ public class SoundManager : MonoBehaviour {
     public void StopPlayingBGM()
     {
         BGM.Stop();
+    }
+
+    public void StopPlayingSFXLoop()
+    {
+        SFXLoop.Stop();
     }
 }

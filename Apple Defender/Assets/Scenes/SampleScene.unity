@@ -4834,9 +4834,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ace0c0d6f25f75d49a0346c5dc023a7f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a3dbfbacb944df947883be9654c11525, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.726
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -6640,6 +6640,130 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1474353905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1474353906}
+  - component: {fileID: 1474353907}
+  m_Layer: 0
+  m_Name: BateryLow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1474353906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474353905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1868465894}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1474353907
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1474353905}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a5c9f7be3cf29214b94f48ce5d11c3b9, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1486844899
 GameObject:
   m_ObjectHideFlags: 0
@@ -8935,6 +9059,7 @@ Transform:
   m_Children:
   - {fileID: 1150985295}
   - {fileID: 1301133516}
+  - {fileID: 1474353906}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8951,12 +9076,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 1150985296}
   SFX: {fileID: 1301133515}
+  SFXLoop: {fileID: 1474353907}
   gameStartSFX: {fileID: 8300000, guid: 1abbc3e8d04fd27468a3f70be09d77e5, type: 3}
   shotSFX: {fileID: 8300000, guid: 880503dd62e15454cafb1ad6624a090a, type: 3}
   hitEnemySFX: {fileID: 8300000, guid: 7062553e7609c1948828478b0c80af93, type: 3}
   stealAppleSFX: {fileID: 8300000, guid: a3dbfbacb944df947883be9654c11525, type: 3}
   getAmmoSFX: {fileID: 8300000, guid: f593c3c65cb18264d948e5631cae2766, type: 3}
-  lowBatterySFX: {fileID: 8300000, guid: a5c9f7be3cf29214b94f48ce5d11c3b9, type: 3}
   gameOverSFX: {fileID: 8300000, guid: 6e4913aab10c98d4ea8ab2b05cfed723, type: 3}
 --- !u!1 &1873485366
 GameObject:

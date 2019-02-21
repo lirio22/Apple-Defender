@@ -48,12 +48,16 @@ public class SceneController : MonoBehaviour
     {
         SoundManager.instance.PlayGameOverSFX();
         Time.timeScale = 0;
+        SoundManager.instance.StopPlayingBGM();
+        SoundManager.instance.StopPlayingSFXLoop();
         StartCoroutine(CallInsect());
     }
 
     public void BatteryGameOver()
     {
         Time.timeScale = 0;
+        SoundManager.instance.StopPlayingBGM();
+        SoundManager.instance.StopPlayingSFXLoop();
         batteryGameOverObj.SetActive(true);
     }
 

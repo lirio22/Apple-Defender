@@ -13,6 +13,7 @@ public class PowerManager : MonoBehaviour {
     private float currentScale = 2f;
 
     private bool isCharging;
+    private bool canPlaySound = true;
 
     private void Update()
     {
@@ -33,6 +34,13 @@ public class PowerManager : MonoBehaviour {
         {
             SceneController.instance.BatteryGameOver();           
         }
+
+        if (currentPowerDuration <= maxPowerDuration / 3 && canPlaySound)
+        {
+            SoundManager.instance.PlayLowBatterySFX();
+            canPlaySound = false;
+        }
+
         UpdateBatteryLight();
     }
 
@@ -43,6 +51,13 @@ public class PowerManager : MonoBehaviour {
         {
             currentPowerDuration = maxPowerDuration;
         }
+
+        if(currentPowerDuration >= maxPowerDuration / 3)
+        {
+            SoundManager.instance.StopPlayingSFXLoop();
+            canPlaySound = true;
+        }
+
         UpdateBatteryLight();
     }
 
