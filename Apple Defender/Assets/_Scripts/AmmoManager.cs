@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class AmmoManager : MonoBehaviour {
 
     private int maxAmmo = 10;
 
+    //When this variable is changed, it updates the text showing the remaining ammo
     public int CurrentAmmo
     {
         get
@@ -28,6 +27,7 @@ public class AmmoManager : MonoBehaviour {
         ammoText.text = "AMMO x" + CurrentAmmo.ToString();
     }
 
+    //This is called when the player touches the ammo box
     public void ResetCurrentAmmo()
     {
         CurrentAmmo = maxAmmo;

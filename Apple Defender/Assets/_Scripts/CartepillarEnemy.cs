@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CartepillarEnemy : MonoBehaviour {
     
@@ -23,6 +21,7 @@ public class CartepillarEnemy : MonoBehaviour {
         transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);
     }
 
+    //If health reaches 0, enemy is destroyed
     public void RemoveHealth()
     {
         health--;
@@ -35,8 +34,8 @@ public class CartepillarEnemy : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //Se o inimigo encostar na maçã, ele a rouba
-        if(other.CompareTag("Apple"))
+        //If enemy touches an apple, it steals it
+        if (other.CompareTag("Apple"))
         {
             haveApple = true;
             speed = escapingSpeed;
@@ -45,7 +44,8 @@ public class CartepillarEnemy : MonoBehaviour {
             appleStack.RemoveApple();
         }
 
-        if(other.CompareTag("End"))
+        //If enemy reaches the left border with an apple, this enemy is destroyed, and the apple won't return to the stack
+        if (other.CompareTag("End"))
         {
             if(haveApple)
             {
@@ -54,19 +54,22 @@ public class CartepillarEnemy : MonoBehaviour {
             }
         }
 
-        if(other.CompareTag("Bullet"))
+        //If enemy collides with a bullet, it loses health
+        if (other.CompareTag("Bullet"))
         {
             SoundManager.instance.PlayHitEnemySFX();
             RemoveHealth();
             Destroy(other.gameObject);
         }
 
-        if(other.CompareTag("GameOver"))
+        //If enemy touches the right border, the game ends
+        if (other.CompareTag("GameOver"))
         {
             SceneController.instance.InsectGameOver();
         }
     }
 
+    //When enemy is destroyed, the apple returns to stack
     private void OnDestroy()
     {
         if(haveApple)

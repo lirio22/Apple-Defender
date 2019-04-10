@@ -1,8 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {
+
     public GameObject[] spawner;
     public GameObject[] enemyPrefab;
     public Transform enemyStack;
